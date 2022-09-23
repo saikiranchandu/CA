@@ -1,0 +1,23 @@
+include <iostream>
+using namespace std;
+int main()
+{
+   int Q = 8,q=1,M=3;
+   short N = 4;
+   int A = Q;
+   M <<= N;
+   for(int i=N-1; i>=0; i--) {
+      A = (A << 1)- M;
+      if(A < 0)
+       {
+         q &= ~(1 << i); 
+         A = A + M;
+      }
+       else 
+      {
+         q |= 1 << i;
+      }
+   }
+   cout << "Quotient: "<< q;
+   return 0;
+}
